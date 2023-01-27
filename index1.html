@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Implement a JS function that takes a list of integers and a target number as input, and returns a array of two integers that add up to the target number.
+
+
+    let arr = [1,5,3,2,4]
+    let k = 4
+
+    let x = findTarget(arr, k)
+    console.log(x)
+
+    function findTarget(arr,k){
+       arr.sort((a,b) => {
+           return a-b
+       })
+let newArr = []
+       let start = 0;
+       let end = arr.length-1
+
+       while(start < end)
+       {
+           if(arr[start] + arr[end] == k)
+           {
+               newArr.push(arr[start])
+               newArr.push(arr[end])
+               return newArr
+           }
+           else if(arr[start] + arr[end] > k)
+           {
+               end--
+           }
+           else{
+               start++
+           }
+
+           
+       }
+
+       if(newArr.length == 0)
+       {
+           return -1
+       }
+    }
+</script>
