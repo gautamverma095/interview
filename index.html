@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Write a JS program that finds the longest common substring between two strings.
+
+    let str1 = "masai"
+    let str2 = "sai"
+
+
+let obj1 = {}
+for(let i = 0; i < str1.length; i++)
+{
+    let bag = ""
+    for(let j = i; j < str1.length; j++)
+    {
+         bag += str1[j]
+         if(obj1[bag] == undefined)
+         {
+             obj1[bag] = 1
+         }
+         else{
+             obj1[bag]++
+         }
+    }
+}
+
+
+    let obj2 = {}
+    for (let i = 0; i < str2.length; i++) {
+        let bag = ""
+        for (let j = i; j < str2.length; j++) {
+            bag += str2[j]
+            if (obj2[bag] == undefined) {
+                obj2[bag] = 1
+            }
+            else {
+                obj2[bag]++
+            }
+        }
+    }
+
+let max = -Infinity
+if(str1.length > str2.length)
+{
+    for(let i in obj2)
+    {
+        
+          if(obj1[i] )
+          {
+              if(i.length > max)
+              {
+                  max = i.length
+              }
+          }
+    }
+}
+  else  if (str1.length < str2.length)
+{
+     for (let i in obj1) {
+        if (obj2[i]) {
+         if (i.length > max) {
+                max = i.length
+            }
+        }
+    }
+}
+console.log(max)
+</script>
